@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{.Title}}</title>
+        <style>
+            .person-name-inactive {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>{{.Title}}</h1>
+        <ul>
+            {{range .People}}
+                {{if .Active}}
+                    <li>
+                        <span>Name: {{.Name}} | Age: {{.Age}}</span>
+                    </li>
+                {{else}}
+                    <li>
+                        <span class="person-name-inactive">Name: {{.Name}} | Age: {{.Age}}</span>
+                    </li>
+                {{end}}
+            {{end}}
+        </ul>
+    </body>
+</html>
